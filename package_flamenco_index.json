@@ -436,22 +436,22 @@
           "version": "1.0.0"
         }
       ],
-      "name": "adafruit",
+      "name": "TDK",
       "email": "info@adafruit.com",
       "help": {
         "online": "https://forums.adafruit.com"
       },
-      "maintainer": "Qeexo",
+      "maintainer": "TDK Qeexo",
       "platforms": [
         {
           "name": "TDK SAMD Boards",
           "architecture": "samd",
           "version": "1.7.13",
           "category": "TDK",
-          "url": "https://adafruit.github.io/arduino-board-index/boards/adafruit-samd-1.7.13.tar.bz2",
-          "archiveFileName": "adafruit-samd-1.7.13.tar.bz2",
-          "checksum": "SHA-256:944c1c4b08824f4fdcd68fdc8e123eb2ea514f7f2e0e80d606c66011f2487fb9",
-          "size": "4544172",
+          "url": "https://github.com/qeexo/Flamenco_Arduino_project/archive/refs/tags/fla_v0.0.1-pre.tar.gz",
+          "archiveFileName": "tdk-qeexo-fla-v0.0.1-pre.tar.gz",
+          "checksum": "SHA-256:3acb64f9b5012887919623bf8c1b8094bd7dc933509475d942cf498164e31a18",
+          "size": "3508830",
           "help": {
             "online": "https://forums.adafruit.com"
           },
