@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)https://silver-adventure-22yg41q.pages.github.io/ -->
+<html lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Arduino Core for SAMD21 CPU | Flamenco_Arduino_project</title>
+<meta name="generator" content="Jekyll v3.9.3">
+<meta property="og:title" content="Arduino Core for SAMD21 CPU">
+<meta property="og:locale" content="en_US">
+<link rel="canonical" href="https://silver-adventure-22yg41q.pages.github.io/">
+<meta property="og:url" content="https://silver-adventure-22yg41q.pages.github.io/">
+<meta property="og:site_name" content="Flamenco_Arduino_project">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta property="twitter:title" content="Arduino Core for SAMD21 CPU">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","headline":"Arduino Core for SAMD21 CPU","name":"Flamenco_Arduino_project","url":"https://silver-adventure-22yg41q.pages.github.io/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <style class="anchorjs"></style><link rel="stylesheet" href="./index_files/style.css">
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+  <body>
+    <div class="container-lg px-3 my-5 markdown-body">
+      
+      <h1><a href="https://silver-adventure-22yg41q.pages.github.io/">Flamenco_Arduino_project</a></h1>
+      
+
+      <h1 id="arduino-core-for-samd21-cpu">Arduino Core for SAMD21 CPU</h1>
+
+<p>This repository contains the source code and configuration files of the Arduino Core
+for Atmel’s SAMD21 processor (used on the Arduino/Genuino Zero, MKR1000 and MKRZero boards).</p>
+
+<h2 id="installation-on-arduino-ide">Installation on Arduino IDE<a class="anchorjs-link " href="https://silver-adventure-22yg41q.pages.github.io/#installation-on-arduino-ide" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h2>
+
+<p>This core is available as a package in the Arduino IDE cores manager.
+Just open the “Boards Manager” and install the package called:</p>
+
+<p>“Arduino SAMD Boards (32-bit ARM Cortex-M0+)”</p>
+
+<h2 id="support">Support<a class="anchorjs-link " href="https://silver-adventure-22yg41q.pages.github.io/#support" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h2>
+
+<p>There is a dedicated section of the Arduino Forum for general discussion and project assistance:</p>
+
+<p>http://forum.arduino.cc/index.php?board=98.0</p>
+
+<h2 id="bugs-or-issues">Bugs or Issues<a class="anchorjs-link " href="https://silver-adventure-22yg41q.pages.github.io/#bugs-or-issues" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h2>
+
+<p>If you find a bug you can submit an issue here on github:</p>
+
+<p>https://github.com/arduino/ArduinoCore-samd/issues</p>
+
+<p>Before posting a new issue, please check if the same problem has been already reported by someone else
+to avoid duplicates.</p>
+
+<h2 id="contributions">Contributions<a class="anchorjs-link " href="https://silver-adventure-22yg41q.pages.github.io/#contributions" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h2>
+
+<p>Contributions are always welcome. The preferred way to receive code cotribution is by submitting a 
+Pull Request on github.</p>
+
+<h2 id="hourly-builds">Hourly builds<a class="anchorjs-link " href="https://silver-adventure-22yg41q.pages.github.io/#hourly-builds" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h2>
+
+<p>This repository is under a Continuous Integration system that every hour checks if there are updates and
+builds a release for testing (the so called “Hourly builds”).</p>
+
+<p>The hourly builds are available through Boards Manager. If you want to install them:</p>
+<ol>
+  <li>Open the <strong>Preferences</strong> of the Arduino IDE.</li>
+  <li>Add this URL <code class="language-plaintext highlighter-rouge">http://downloads.arduino.cc/Hourly/samd/package_samd-hourly-build_index.json</code> in the <strong>Additional Boards Manager URLs</strong> field, and click OK.</li>
+  <li>Open the <strong>Boards Manager</strong> (menu Tools-&gt;Board-&gt;Board Manager…)</li>
+  <li>Install <strong>Arduino SAMD core - Hourly build</strong></li>
+  <li>Select one of the boards under <strong>SAMD Hourly build XX</strong> in Tools-&gt;Board menu</li>
+  <li>Compile/Upload as usual</li>
+</ol>
+
+<p>If you already installed an hourly build and you want to update it with the latest:</p>
+<ol>
+  <li>Open the <strong>Boards Manager</strong> (menu Tools-&gt;Board-&gt;Board Manager…)</li>
+  <li>Remove <strong>Arduino SAMD core - Hourly build</strong></li>
+  <li>Install again <strong>Arduino SAMD core - Hourly build</strong>, the Board Manager will download the latest build replacing the old one.</li>
+</ol>
+
+<h2 id="license-and-credits">License and credits<a class="anchorjs-link " href="https://silver-adventure-22yg41q.pages.github.io/#license-and-credits" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h2>
+
+<p>This core has been developed by Arduino LLC in collaboration with Atmel.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  Copyright (c) 2015 Arduino LLC.  All right reserved.
+
+  This library is free software; you can redistribute it and/or
+  modify it under the terms of the GNU Lesser General Public
+  License as published by the Free Software Foundation; either
+  version 2.1 of the License, or (at your option) any later version.
+
+  This library is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+  See the GNU Lesser General Public License for more details.
+
+  You should have received a copy of the GNU Lesser General Public
+  License along with this library; if not, write to the Free Software
+  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+</code></pre></div></div>
+
+
+      
+    </div>
+    <script src="./index_files/anchor.min.js.download" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
+    <script>anchors.add();</script>
+  
+
+</body></html>
