@@ -1,7 +1,61 @@
 {
   "packages": [
     {
-      "websiteURL": "https://qeexo.tdk.com",
+      "name": "flamenco",
+      "maintainer": "Tim Kim",
+      "websiteURL": "https://invensense.tdk.com/products/smartindustrial/iim-46234/",
+      "email": "tim.kim@tdk.com",
+      "help": {
+        "online": "https://qeexo.github.io/Flamenco_Arduino_project"
+      },
+      "platforms": [
+        {
+          "name": "TDK SAMD Boards",
+          "architecture": "samd",
+          "version": "0.0.1-pre",
+          "category": "Contributed",
+          "help": {
+            "online": "https://qeexo.github.io/Flamenco_Arduino_project"
+          },
+          "url": "https://github.com/qeexo/Flamenco_Arduino_project/archive/refs/tags/fla_v0.0.1-pre.tar.gz",
+          "archiveFileName": "tdk-qeexo-fla-v0.0.1-pre.tar.gz",
+          "checksum": "SHA-256:3acb64f9b5012887919623bf8c1b8094bd7dc933509475d942cf498164e31a18",
+          "size": "3508830",
+          "boards": [{ "name": "TDK IIM-46235" }],
+          "toolsDependencies": [
+            {
+              "packager": "flamenco",
+              "name": "arm-none-eabi-gcc",
+              "version": "9-2019q4"
+            },
+            {
+              "packager": "arduino",
+              "name": "bossac",
+              "version": "1.7.0-arduino3"
+            },
+            {
+              "packager": "flamenco",				
+              "name": "bossac_fla",
+              "version": "1.0.0"
+            },
+            {
+              "packager": "arduino",
+              "name": "openocd",
+              "version": "0.11.0-arduino2"
+            },
+            {
+              "packager": "flamenco",
+              "name": "CMSIS",
+              "version": "5.4.0"
+            },
+            {
+              "packager": "flamenco",
+              "name": "CMSIS-Atmel",
+              "version": "1.2.2"
+            }
+          ]
+        }
+      ],
       "tools": [
         {
           "name": "bossac",
@@ -357,84 +411,21 @@
           "systems": [
             {
               "host": "i386-apple-darwin11",
-              "checksum": "MD5:f57303076b587e81c06af98a3a7cf287",
-              "size": "46232",
+              "checksum": "MD5:02a6737f647fb1f2131eee4cffb655cc",
+              "size": "46294",
               "archiveFileName": "bossac_fla-1.0.0-mac.tar.gz",
               "url": "https://qeexo.github.io/Flamenco_Arduino_project/bossac_fla-1.0.0-mac.tar.gz"
             },
             {
               "host": "i686-mingw32",
-              "checksum": "MD5:0fc97c02577fdff2a25ef5ae845cac18",
-              "size": "898277",
+              "checksum": "MD5:cc6be3f862e159512b4f9fb274d2d8f2",
+              "size": "898387",
               "archiveFileName": "bossac_fla-1.0.0-win.tar.gz",
               "url": "https://qeexo.github.io/Flamenco_Arduino_project/bossac_fla-1.0.0-win.tar.gz"
-            },
+            }
           ],
           "name": "bossac_fla",
-          "version": "1.4.0"
-        },
-      ],
-      "name": "TDK",
-      "email": "info@adafruit.com",
-      "help": {
-        "online": "https://forums.adafruit.com"
-      },
-      "maintainer": "TDK Qeexo",
-      "platforms": [
-        {
-          "name": "TDK SAMD Boards",
-          "architecture": "samd",
-          "version": "1.7.13",
-          "category": "TDK",
-          "url": "https://github.com/qeexo/Flamenco_Arduino_project/archive/refs/tags/fla_v0.0.1-pre.tar.gz",
-          "archiveFileName": "tdk-qeexo-fla-v0.0.1-pre.tar.gz",
-          "checksum": "SHA-256:3acb64f9b5012887919623bf8c1b8094bd7dc933509475d942cf498164e31a18",
-          "size": "3508830",
-          "help": {
-            "online": "https://forums.adafruit.com"
-          },
-          "boards": [
-            {
-              "name": "TDK IIM-46235"
-            }
-          ],
-          "toolsDependencies": [
-            {
-              "packager": "adafruit",
-              "name": "arm-none-eabi-gcc",
-              "version": "9-2019q4"
-            },
-            {
-              "packager": "arduino",
-              "name": "bossac",
-              "version": "1.7.0-arduino3"
-            },
-            {
-              "packager": "adafruit",
-              "name": "bossac_fla",
-              "version": "1.0.0"
-            },
-            {
-              "packager": "arduino",
-              "name": "openocd",
-              "version": "0.11.0-arduino2"
-            },
-            {
-              "packager": "adafruit",
-              "name": "CMSIS",
-              "version": "5.4.0"
-            },
-            {
-              "packager": "adafruit",
-              "name": "CMSIS-Atmel",
-              "version": "1.2.2"
-            },
-            {
-              "packager": "arduino",
-              "name": "arduinoOTA",
-              "version": "1.2.1"
-            }
-          ]
+          "version": "1.0.0"
         }
       ]
     }
