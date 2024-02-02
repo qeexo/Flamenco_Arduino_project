@@ -52,7 +52,12 @@
               "packager": "flamenco",
               "name": "CMSIS-Atmel",
               "version": "1.2.2"
-            }
+            },
+            {
+              "packager": "flamenco",
+              "name": "Arduino-FreeRTOS-SAMD51",
+              "version": "1.2.0"
+            }			
           ]
         }
       ],
@@ -322,6 +327,61 @@
               "archiveFileName": "CMSIS-Atmel-1.2.2.tar.bz2",
               "checksum": "SHA-256:ad06a1d864b79981728882a0a1272ff4dc0b29ae4e056f3f22f3ed449a6c65b8",
               "size": "2511228"
+            }
+          ]
+        },
+        {
+          "name": "Arduino-FreeRTOS-SAMD51",
+          "version": "1.2.0",
+          "systems": [
+            {
+              "host": "i686-mingw32",
+              "url": "https://github.com/BriscoeTech/Arduino-FreeRTOS-SAMD51/archive/refs/tags/v1.2.0.tar.gz",
+              "archiveFileName": "Arduino-FreeRTOS-SAMD51-1.2.0.tar.gz",
+              "checksum": "SHA-256:af2c1f77b60fdc081335e23d56d65217f0ac512dec0fcf21941df6864b70637c",
+              "size": "200816"
+            },
+            {
+              "host": "x86_64-apple-darwin",
+              "url": "https://github.com/BriscoeTech/Arduino-FreeRTOS-SAMD51/archive/refs/tags/v1.2.0.tar.gz",
+              "archiveFileName": "Arduino-FreeRTOS-SAMD51-1.2.0.tar.gz",
+              "checksum": "SHA-256:af2c1f77b60fdc081335e23d56d65217f0ac512dec0fcf21941df6864b70637c",
+              "size": "200816"
+            },
+            {
+              "host": "x86_64-pc-linux-gnu",
+              "url": "https://github.com/BriscoeTech/Arduino-FreeRTOS-SAMD51/archive/refs/tags/v1.2.0.tar.gz",
+              "archiveFileName": "Arduino-FreeRTOS-SAMD51-1.2.0.tar.gz",
+              "checksum": "SHA-256:af2c1f77b60fdc081335e23d56d65217f0ac512dec0fcf21941df6864b70637c",
+              "size": "200816"
+            },
+            {
+              "host": "i686-pc-linux-gnu",
+              "url": "https://github.com/BriscoeTech/Arduino-FreeRTOS-SAMD51/archive/refs/tags/v1.2.0.tar.gz",
+              "archiveFileName": "Arduino-FreeRTOS-SAMD51-1.2.0.tar.gz",
+              "checksum": "SHA-256:af2c1f77b60fdc081335e23d56d65217f0ac512dec0fcf21941df6864b70637c",
+              "size": "200816"
+            },
+            {
+              "host": "arm-linux-gnueabihf",
+              "url": "https://github.com/BriscoeTech/Arduino-FreeRTOS-SAMD51/archive/refs/tags/v1.2.0.tar.gz",
+              "archiveFileName": "Arduino-FreeRTOS-SAMD51-1.2.0.tar.gz",
+              "checksum": "SHA-256:af2c1f77b60fdc081335e23d56d65217f0ac512dec0fcf21941df6864b70637c",
+              "size": "200816"
+            },
+            {
+              "host": "aarch64-linux-gnu",
+              "url": "https://github.com/BriscoeTech/Arduino-FreeRTOS-SAMD51/archive/refs/tags/v1.2.0.tar.gz",
+              "archiveFileName": "Arduino-FreeRTOS-SAMD51-1.2.0.tar.gz",
+              "checksum": "SHA-256:af2c1f77b60fdc081335e23d56d65217f0ac512dec0fcf21941df6864b70637c",
+              "size": "200816"
+            },
+            {
+              "host": "all",
+              "url": "https://github.com/BriscoeTech/Arduino-FreeRTOS-SAMD51/archive/refs/tags/v1.2.0.tar.gz",
+              "archiveFileName": "Arduino-FreeRTOS-SAMD51-1.2.0.tar.gz",
+              "checksum": "SHA-256:af2c1f77b60fdc081335e23d56d65217f0ac512dec0fcf21941df6864b70637c",
+              "size": "200816"
             }
           ]
         },
