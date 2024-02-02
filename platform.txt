@@ -17,10 +17,10 @@
 # Arduino SAMD Core and platform.
 #
 # For more info:
-# https://arduino.github.io/arduino-cli/0.33/platform-specification/
+# https://github.com/arduino/Arduino/wiki/Arduino-IDE-1.5---3rd-party-Hardware-specification
 
 name=Adafruit SAMD (32-bits ARM Cortex-M0+ and Cortex-M4) Boards
-version=1.7.13
+version=1.7.11
 
 # Compile variables
 # -----------------
@@ -123,63 +123,31 @@ recipe.output.save_file={build.project_name}.{build.variant}.{build.preferred_ou
 recipe.size.pattern="{compiler.path}{compiler.size.cmd}" -A "{build.path}/{build.project_name}.elf"
 recipe.size.regex=\.text\s+([0-9]+).*
 
-#
-# BOSSA
-#
-tools.bossac.path={runtime.tools.bossac-1.7.0-arduino3.path}
-tools.bossac.cmd=bossac
-tools.bossac.cmd.windows=bossac.exe
-
-tools.bossac.upload.params.verbose=-i -d
-tools.bossac.upload.params.quiet=
-tools.bossac.upload.pattern="{path}/{cmd}" {upload.verbose} --port={serial.port.file} -U {upload.native_usb} -i -e -w -v "{build.path}/{build.project_name}.bin" -R
-
-tools.bossac_remote.upload.pattern=/usr/bin/run-bossac {upload.verbose} --port=ttyATH0 -U {upload.native_usb} -e -w -v /tmp/sketch.bin -R
-
-tools.bossac.network_cmd={runtime.tools.arduinoOTA.path}/bin/arduinoOTA
-tools.bossac.upload.network_pattern="{network_cmd}" -address {serial.port} -port 65280 -username arduino -password "{network.password}" -sketch "{build.path}/{build.project_name}.bin" -upload /sketch -b
-
-# v1.8.0
-
-tools.bossac18.path={runtime.tools.bossac-1.8.0-48-gb176eee.path}
-tools.bossac18.cmd=bossac
-tools.bossac18.cmd.windows=bossac.exe
-
-tools.bossac18.upload.params.verbose=-i -d
-tools.bossac18.upload.params.quiet=
-tools.bossac18.upload.pattern="{path}/{cmd}" {upload.verbose} --port={serial.port.file} -U -i --offset={upload.offset} -w -v "{build.path}/{build.project_name}.bin" -R
-
-tools.bossac18.network_cmd={runtime.tools.arduinoOTA.path}/bin/arduinoOTA
-tools.bossac18.upload.network_pattern="{network_cmd}" -address {serial.port} -port 65280 -username arduino -password "{network.password}" -sketch "{build.path}/{build.project_name}.bin" -upload /sketch -b
 
 #
-# BOSSA (ignore binary size)
+# BOSSA_FLA
 #
-tools.bossacI.path={runtime.tools.bossac-1.7.0-arduino3.path}
-tools.bossacI.cmd=bossac
-tools.bossacI.cmd.windows=bossac.exe
 
-tools.bossacI.upload.params.verbose=-i -d
-tools.bossacI.upload.params.quiet=
-tools.bossacI.upload.pattern="{path}/{cmd}" {upload.verbose} --port={serial.port.file} -I -U {upload.native_usb} -i -e -w "{build.path}/{build.project_name}.bin" -R
+tools.bossac_fla.path={runtime.tools.bossac_fla-1.0.0.path}/1.0.0/
+tools.bossac_fla.cmd=bossac_fla
+tools.bossac_fla.cmd.windows=bossac_fla.exe
 
-tools.bossacI_remote.upload.pattern=/usr/bin/run-bossac {upload.verbose} --port=ttyATH0 -U {upload.native_usb} -e -w -v /tmp/sketch.bin -R
-
-tools.bossacI.network_cmd={runtime.tools.arduinoOTA.path}/bin/arduinoOTA
-tools.bossacI.upload.network_pattern="{network_cmd}" -address {serial.port} -port 65280 -username arduino -password "{network.password}" -sketch "{build.path}/{build.project_name}.bin" -upload /sketch -b
+tools.bossac_fla.upload.params.verbose=-i
+tools.bossac_fla.upload.params.quiet=
+tools.bossac_fla.upload.pattern="{path}/{cmd}" {upload.verbose} --port={serial.port.file} -F -v "{build.path}/{build.project_name}.bin" -R
 
 
 #
 # OpenOCD sketch upload
 #
 
-tools.openocd.path={runtime.tools.openocd-0.11.0-arduino2.path}
+tools.openocd.path={runtime.tools.openocd-0.10.0-arduino7.path}
 tools.openocd.cmd=bin/openocd
 tools.openocd.cmd.windows=bin/openocd.exe
 
 tools.openocd.upload.params.verbose=-d2
 tools.openocd.upload.params.quiet=-d0
-tools.openocd.upload.pattern="{path}/{cmd}" {upload.verbose} -s "{path}/share/openocd/scripts/" -f "{runtime.platform.path}/{build.openocdscript}" -c "telnet_port disabled; program {{build.path}/{build.project_name}.bin} verify reset 0x2000; shutdown"
+tools.openocd.upload.pattern="{path}/{cmd}" {upload.verbose} -s "{path}/share/openocd/scripts/" -f "{runtime.platform.path}/variants/{build.variant}/{build.openocdscript}" -c "telnet_port disabled; program {{build.path}/{build.project_name}.bin} verify reset 0x2000; shutdown"
 
 tools.openocd.network_cmd={runtime.tools.arduinoOTA.path}/bin/arduinoOTA
 tools.openocd.upload.network_pattern={network_cmd} -address {serial.port} -port 65280 -username arduino -password "{network.password}" -sketch "{build.path}/{build.project_name}.bin" -upload /sketch -b
@@ -187,7 +155,7 @@ tools.openocd.upload.network_pattern={network_cmd} -address {serial.port} -port 
 # Program flashes the binary at 0x0000, so use the linker script without_bootloader
 tools.openocd.program.params.verbose=-d2
 tools.openocd.program.params.quiet=-d0
-tools.openocd.program.pattern="{path}/{cmd}" {program.verbose} -s "{path}/share/openocd/scripts/" -f "{runtime.platform.path}/{build.openocdscript}" -c "telnet_port disabled; program {{build.path}/{build.project_name}.elf} verify reset; shutdown"
+tools.openocd.program.pattern="{path}/{cmd}" {program.verbose} -s "{path}/share/openocd/scripts/" -f "{runtime.platform.path}/variants/{build.variant}/{build.openocdscript}" -c "telnet_port disabled; program {{build.path}/{build.project_name}.elf} verify reset; shutdown"
 
 tools.openocd.erase.params.verbose=-d3
 tools.openocd.erase.params.quiet=-d0
@@ -195,25 +163,25 @@ tools.openocd.erase.pattern=
 
 tools.openocd.bootloader.params.verbose=-d2
 tools.openocd.bootloader.params.quiet=-d0
-tools.openocd.bootloader.pattern="{path}/{cmd}" {bootloader.verbose} -s "{path}/share/openocd/scripts/" -f "{runtime.platform.path}/{build.openocdscript}" -c "telnet_port disabled; init; halt; at91samd bootloader 0; program {{runtime.platform.path}/bootloaders/{bootloader.file}} verify reset; shutdown"
+tools.openocd.bootloader.pattern="{path}/{cmd}" {bootloader.verbose} -s "{path}/share/openocd/scripts/" -f "{runtime.platform.path}/variants/{build.variant}/{build.openocdscript}" -c "telnet_port disabled; init; halt; at91samd bootloader 0; program {{runtime.platform.path}/bootloaders/{bootloader.file}} verify reset; shutdown"
 
 #
 # OpenOCD sketch upload - version with configurable bootloader size
 # FIXME: this programmer is a workaround for default options being overwritten by uploadUsingPreferences
 #
 
-tools.openocd-withbootsize.path={runtime.tools.openocd-0.11.0-arduino2.path}
+tools.openocd-withbootsize.path={runtime.tools.openocd-0.10.0-arduino7.path}
 tools.openocd-withbootsize.cmd=bin/openocd
 tools.openocd-withbootsize.cmd.windows=bin/openocd.exe
 
 tools.openocd-withbootsize.upload.params.verbose=-d2
 tools.openocd-withbootsize.upload.params.quiet=-d0
-tools.openocd-withbootsize.upload.pattern="{path}/{cmd}" {upload.verbose} -s "{path}/share/openocd/scripts/" -f "{runtime.platform.path}/{build.openocdscript}" -c "telnet_port disabled; program {{build.path}/{build.project_name}.bin} verify reset {bootloader.size}; shutdown"
+tools.openocd-withbootsize.upload.pattern="{path}/{cmd}" {upload.verbose} -s "{path}/share/openocd/scripts/" -f "{runtime.platform.path}/variants/{build.variant}/{build.openocdscript}" -c "telnet_port disabled; program {{build.path}/{build.project_name}.bin} verify reset {bootloader.size}; shutdown"
 
 # Program flashes the binary at 0x0000, so use the linker script without_bootloader
 tools.openocd-withbootsize.program.params.verbose=-d2
 tools.openocd-withbootsize.program.params.quiet=-d0
-tools.openocd-withbootsize.program.pattern="{path}/{cmd}" {program.verbose} -s "{path}/share/openocd/scripts/" -f "{runtime.platform.path}/{build.openocdscript}" -c "telnet_port disabled; program {{build.path}/{build.project_name}.elf} verify reset; shutdown"
+tools.openocd-withbootsize.program.pattern="{path}/{cmd}" {program.verbose} -s "{path}/share/openocd/scripts/" -f "{runtime.platform.path}/variants/{build.variant}/{build.openocdscript}" -c "telnet_port disabled; program {{build.path}/{build.project_name}.elf} verify reset; shutdown"
 
 tools.openocd-withbootsize.erase.params.verbose=-d3
 tools.openocd-withbootsize.erase.params.quiet=-d0
@@ -221,28 +189,4 @@ tools.openocd-withbootsize.erase.pattern=
 
 tools.openocd-withbootsize.bootloader.params.verbose=-d2
 tools.openocd-withbootsize.bootloader.params.quiet=-d0
-tools.openocd-withbootsize.bootloader.pattern="{path}/{cmd}" {bootloader.verbose} -s "{path}/share/openocd/scripts/" -f "{runtime.platform.path}/{build.openocdscript}" -c "telnet_port disabled; init; halt; at91samd bootloader 0; program {{runtime.platform.path}/bootloaders/{bootloader.file}} verify reset; shutdown"
-
-# ----------------------------------------
-# Debugger configuration (general options)
-# ----------------------------------------
-# EXPERIMENTAL feature:
-#  - this is alpha and may be subject to change without notice
-debug.executable={build.path}/{build.project_name}.elf
-debug.toolchain=gcc
-debug.toolchain.path={runtime.tools.arm-none-eabi-gcc.path}/bin/
-debug.toolchain.prefix=arm-none-eabi-
-
-debug.server=openocd
-debug.server.openocd.path={runtime.tools.openocd-0.11.0-arduino2.path}/bin/openocd
-debug.server.openocd.scripts_dir={runtime.tools.openocd-0.11.0-arduino2.path}/share/openocd/scripts/
-debug.server.openocd.script={runtime.platform.path}/{build.openocdscript}
-
-# JLinkServer is not supported by arduino-cli yet
-#   https://github.com/arduino/arduino-cli/blob/eca9d9a8f00582a08fadea8a4b7e3ef01b40d082/commands/debug/debug.go#L160
-# use debug_custom.json to run JLinkGDBServer instead
-#   https://docs.arduino.cc/tutorials/mkr-wifi-1010/mkr-jlink-setup
-#debug.server=jlink
-#debug.server.jlink.path=JLinkGDBServer
-#debug.server.jlink.device=ATSAMD21G18
-#debug.server.jlink.script={runtime.platform.path}/{build.openocdscript}
+tools.openocd-withbootsize.bootloader.pattern="{path}/{cmd}" {bootloader.verbose} -s "{path}/share/openocd/scripts/" -f "{runtime.platform.path}/variants/{build.variant}/{build.openocdscript}" -c "telnet_port disabled; init; halt; at91samd bootloader 0; program {{runtime.platform.path}/bootloaders/{bootloader.file}} verify reset; shutdown"

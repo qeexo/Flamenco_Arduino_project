@@ -128,8 +128,9 @@ extern void serial1Event(char c) __attribute__((weak));
 
 __attribute__((weak)) void serialEventRun(void)
 {
+#define SERIAL_RX_MAX 128	
   static int serial1_rx_idx = 0;
-  static char serial1_rx_buf[128] = {0,};
+  static char serial1_rx_buf[SERIAL_RX_MAX] = {0,};
 #define BOOTLOADER_CMD "BOOTLOADER\r"
 
   int n = 0;
@@ -138,6 +139,10 @@ __attribute__((weak)) void serialEventRun(void)
        char c = (char)Serial1.read();
        if(serial1Event) serial1Event(c);
        serial1_rx_buf[serial1_rx_idx++] = c;
+
+       if(serial1_rx_idx >= SERIAL_RX_MAX)
+         serial1_rx_idx = 0;
+
 
        if(c == '\r' || c == '\n') {
          if(!memcmp(serial1_rx_buf, BOOTLOADER_CMD, sizeof(BOOTLOADER_CMD))) {
