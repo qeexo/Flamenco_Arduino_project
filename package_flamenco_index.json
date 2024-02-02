@@ -12,15 +12,15 @@
         {
           "name": "TDK SAMD Boards",
           "architecture": "samd",
-          "version": "0.0.1-pre",
+          "version": "0.0.1-pre1",
           "category": "Contributed",
           "help": {
             "online": "https://qeexo.github.io/Flamenco_Arduino_project"
           },
-          "url": "https://github.com/qeexo/Flamenco_Arduino_project/archive/refs/tags/fla_v0.0.1-pre.tar.gz",
-          "archiveFileName": "tdk-qeexo-fla-v0.0.1-pre.tar.gz",
-          "checksum": "SHA-256:3acb64f9b5012887919623bf8c1b8094bd7dc933509475d942cf498164e31a18",
-          "size": "3508830",
+          "url": "https://github.com/qeexo/Flamenco_Arduino_project/archive/refs/tags/fla_v0.0.1-pre1.tar.gz",
+          "archiveFileName": "tdk-qeexo-fla-v0.0.1-pre1.tar.gz",
+          "checksum": "SHA-256:396485fcf42c30b2cd3a90493ee572f4336e4ce561a01c89c9f3125753ad0d2e",
+          "size": "1068471",
           "boards": [{ "name": "TDK IIM-46235" }],
           "toolsDependencies": [
             {
