@@ -17,9 +17,9 @@
           "help": {
             "online": "https://qeexo.github.io/Flamenco_Arduino_project"
           },
-          "url": "https://github.com/qeexo/Flamenco_Arduino_project/archive/refs/tags/fla_v0.0.1-pre1.tar.gz",
-          "archiveFileName": "tdk-qeexo-fla-v0.0.1-pre1.tar.gz",
-          "checksum": "SHA-256:396485fcf42c30b2cd3a90493ee572f4336e4ce561a01c89c9f3125753ad0d2e",
+          "url": "https://github.com/qeexo/Flamenco_Arduino_project/releases/download/fla_v0.0.1-pre1/fla_v0.0.1-pre1.tar.bz2",
+          "archiveFileName": "tdk-qeexo-fla_v0.0.1-pre1.tar.bz2",
+          "checksum": "SHA-256:9368836eeeb2e820426f599ce8a3dc2a995b98401959e13bd5f8b29fd5f1e326",
           "size": "1068471",
           "boards": [{ "name": "TDK IIM-46235" }],
           "toolsDependencies": [
